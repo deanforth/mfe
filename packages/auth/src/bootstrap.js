@@ -14,7 +14,6 @@ const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
   if (onNavigate) {
     history.listen(onNavigate);
   }
-  // remove comment
 
   ReactDOM.render(<App onSignIn={onSignIn} history={history} />, el);
 
