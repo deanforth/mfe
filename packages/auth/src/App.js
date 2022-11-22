@@ -13,6 +13,7 @@ const generateClassName = createGenerateClassName({
 });
 
 export default ({ history, onSignIn }) => {
+  // remvoe comment
   return (
     <div>
       <StylesProvider generateClassName={generateClassName}>
