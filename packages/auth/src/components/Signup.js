@@ -11,7 +11,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 function Copyright() {
   return (
@@ -50,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp({ onSignIn }) {
   const classes = useStyles();
-  const [email, setEmail] = useState();
 
   return (
     <Container component="main" maxWidth="xs">
@@ -99,7 +97,6 @@ export default function SignUp({ onSignIn }) {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                onChange={(event) => setEmail(event.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -127,9 +124,7 @@ export default function SignUp({ onSignIn }) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => {
-              onSignIn(email);
-            }}
+            onClick={onSignIn}
           >
             Sign Up
           </Button>

@@ -11,7 +11,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 function Copyright() {
   return (
@@ -52,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn({ onSignIn }) {
-  const [email, setEmail] = useState();
   const classes = useStyles();
 
   return (
@@ -79,7 +77,6 @@ export default function SignIn({ onSignIn }) {
             name="email"
             autoComplete="email"
             autoFocus
-            onChange={(event) => setEmail(event.target.value)}
           />
           <TextField
             variant="outlined"
@@ -102,9 +99,7 @@ export default function SignIn({ onSignIn }) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => {
-              onSignIn(email);
-            }}
+            onClick={onSignIn}
           >
             Sign In
           </Button>
